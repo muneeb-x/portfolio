@@ -1,10 +1,9 @@
 /* ==========================================================================
-   IMMERSEVING QUANTUM REACTOR CORE ENGINE (script.js)
+   FOREST CALM PORTFOLIO ENGINE (script.js)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initQuantumCanvas();
-  initSystemUptime();
   initHUDTabs();
   initHeroTypewriter();
   initAudioSynth();
@@ -58,7 +57,7 @@ function initQuantumCanvas() {
       this.radius = this.baseRadius;
       this.alpha = isExplosion ? 1 : Math.random() * 0.6 + 0.3;
       this.decay = isExplosion ? Math.random() * 0.02 + 0.01 : 0;
-      this.color = getComputedStyle(document.body).getPropertyValue('--glow-primary').trim() || '#3bc9b0';
+      this.color = '#6ba37a';
     }
     
     draw() {
@@ -74,7 +73,6 @@ function initQuantumCanvas() {
     }
     
     update() {
-      this.color = getComputedStyle(document.body).getPropertyValue('--glow-primary').trim() || '#3bc9b0';
       this.x += this.vx;
       this.y += this.vy;
       
@@ -119,7 +117,7 @@ function initQuantumCanvas() {
   }
   
   function drawVectorGrid() {
-    ctx.strokeStyle = 'rgba(0, 255, 65, 0.025)';
+    ctx.strokeStyle = 'rgba(74, 124, 89, 0.015)';
     ctx.lineWidth = 0.6;
     let gap = 50;
     
@@ -177,35 +175,7 @@ function initQuantumCanvas() {
   animate();
 }
 
-/* ===== 2. REAL-TIME SYSTEM TELEMETRY COUNTERS ===== */
-function initSystemUptime() {
-  const uptimeEl = document.getElementById('uptime');
-  const startTime = Date.now();
-  
-  function update() {
-    let elapsed = Date.now() - startTime;
-    let hrs = Math.floor(elapsed / 3600000);
-    let mins = Math.floor((elapsed % 3600000) / 60000);
-    let secs = Math.floor((elapsed % 60000) / 1000);
-    let ms = Math.floor(elapsed % 1000);
-    
-    if (uptimeEl) {
-      uptimeEl.textContent = 
-        `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}.${String(ms).padStart(3, '0')}`;
-    }
-    requestAnimationFrame(update);
-  }
-  
-  update();
-  
-  // Random ping telemetries
-  setInterval(() => {
-    const pingEl = document.getElementById('pingRate');
-    if (pingEl) {
-      pingEl.textContent = `${Math.floor(Math.random() * 4 + 9)}ms`;
-    }
-  }, 3000);
-}
+
 
 /* ===== 3. HUD FLOATING NAVBAR SECTIONS SCROLL ===== */
 function initHUDTabs() {
@@ -254,24 +224,11 @@ window.toggleMenu = function() {
 };
 
 /* ===== 4. DYNAMIC SYSTEM THEME SWITCHER ===== */
-window.switchTheme = function(themeName) {
-  triggerAudioChime(320);
-  const body = document.body;
-  
-  body.classList.remove('theme-redblack');
-  body.classList.add(`theme-${themeName}`);
-  
-  document.querySelectorAll('.theme-btn').forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.getAttribute('onclick').includes(themeName)) {
-      btn.classList.add('active');
-    }
-  });
-};
+
 
 /* ===== 5. HERO TYPEWRITER CAROUSEL ===== */
 function initHeroTypewriter() {
-  const words = ['DATA PIPELINES', 'ML MODELS', 'C++ SYSTEMS', 'JAVA APPS', 'BIG DATA CORE'];
+  const words = ['data pipelines', 'ML models', 'C++ systems', 'Java apps', 'data solutions'];
   let wordIdx = 0;
   let charIdx = 0;
   let isDeleting = false;
@@ -632,8 +589,8 @@ function drawNeuralNet(flowProgress = null) {
     output: { x: canvas.width * 0.85, y: canvas.height * 0.5, val: netConfig.output, lbl: 'output (y)' }
   };
   
-  const green = '#00ff41';
-  const magenta = '#005a1a';
+  const green = '#4a7c59';
+  const magenta = '#2d4a36';
   
   // 1. Draw Synaptic Links (Synapses)
   // Input to Hidden Synapses
@@ -774,7 +731,7 @@ function renderCarousel() {
       card.classList.add('active-card');
       
       // Red/black theme active card highlight
-      card.style.borderColor = 'var(--glow-primary)';
+      card.style.borderColor = 'var(--primary)';
     } else if (offset === 1) {
       // Right slide
       card.style.transform = `translateX(280px) translateZ(-150px) rotateY(-36deg) scale(0.85)`;
@@ -820,11 +777,10 @@ function initEchoCompanion() {
 }
 
 const chatDatabase = {
-  bio: "Abdul Muneeb is a Data Science & AI enthusiast currently pursuing his BS in Data Science. He has a strong foundation in C, C++, Java, Python, and SQL, and is passionate about building intelligent systems that solve real-world problems. His engineering ethos centres around clean, efficient, and scalable solutions.",
-  skills: "Abdul Muneeb's technical arsenal includes: C, C++, Java, Python, SQL, JavaScript for languages. Pandas, NumPy, Scikit-Learn, Apache Kafka, Apache Spark for Data & AI. Git, Docker, Jupyter, VS Code, and Linux for tools and environments.",
-  os: "The OS Assignments (A01, A02, A03) are a series of system-level programming projects written in C, covering core Operating Systems concepts including process management, memory handling, file systems, and CPU scheduling algorithms.",
-  focus: "Abdul Muneeb is currently focused on exploring data-driven solutions & intelligent systems. He is diving deep into machine learning, big data technologies, and building a strong foundation in software engineering principles.",
-  sound: "Pure custom synthesizer channels built using the HTML5 Web Audio API! Oscillators build complex triangle/sine soundwaves, gain layers construct decay curves, and biquad filter nodes compile a low-pass analog texture. 100% real-time, asset-free browser audio."
+  bio: "Abdul Muneeb is a Data Science & AI enthusiast currently pursuing his BS in Data Science. He has a strong foundation in C, C++, Java, Python, and SQL, and loves building intelligent systems that solve real-world problems. His approach focuses on clean, efficient, and scalable solutions.",
+  skills: "Abdul Muneeb's skills include: C, C++, Java, Python, SQL, JavaScript for languages. Pandas, NumPy, Scikit-Learn, Apache Kafka, Apache Spark for Data & AI. Git, Docker, Jupyter, VS Code, and Linux for tools and environments.",
+  os: "The OS Assignments (A01, A02, A03) are system-level programming projects in C, covering core Operating Systems concepts like process management, memory handling, file systems, and CPU scheduling algorithms.",
+  focus: "Abdul Muneeb is currently focused on exploring data-driven solutions and intelligent systems. He's diving deep into machine learning, big data technologies, and building a strong foundation in software engineering."
 };
 
 window.triggerEchoQuery = function(topic) {
@@ -837,34 +793,34 @@ window.triggerEchoQuery = function(topic) {
   // Highlight eye active scan visual state!
   triggerAudioChime(720);
   if (iris) {
-    iris.style.fill = 'rgba(255, 255, 255, 0.1)';
-    setTimeout(() => { iris.style.fill = 'rgba(var(--glow-primary), 0.04)'; }, 600);
+    iris.style.fill = 'rgba(74, 124, 89, 0.1)';
+    setTimeout(() => { iris.style.fill = 'rgba(74, 124, 89, 0.04)'; }, 600);
   }
-  if (status) {
-    status.textContent = 'COMPILING_QUERY...';
-    status.className = 't-accent';
-  }
+    if (status) {
+      status.textContent = 'THINKING...';
+      status.className = 't-accent';
+    }
   
   // 1. Log outgoing question bubble
   const userBubble = document.createElement('div');
   userBubble.className = 'chat-line outgoing';
   userBubble.innerHTML = `
-    <span class="sender-tag">[OPERATOR]:</span>
-    <span class="sender-msg">Querying AR.TELEMETRY: ${topic.toUpperCase()}</span>
+    <span class="sender-tag">[You]:</span>
+    <span class="sender-msg">Tell me about ${topic}</span>
   `;
   logs.appendChild(userBubble);
   
   // Typewriter output delay
   setTimeout(() => {
     if (status) {
-      status.textContent = 'REPLY_ESTABLISHED';
+      status.textContent = 'READY';
       status.className = 't-success';
     }
     
     const replyBubble = document.createElement('div');
     replyBubble.className = 'chat-line incoming';
     replyBubble.innerHTML = `
-      <span class="sender-tag">[ECHO-9]:</span>
+      <span class="sender-tag">[AI]:</span>
       <span class="sender-msg" id="typingEcho"></span>
     `;
     logs.appendChild(replyBubble);
@@ -884,7 +840,7 @@ window.triggerEchoQuery = function(topic) {
         // Strip temporary typing ID
         targetEl.removeAttribute('id');
         if (status) {
-          status.textContent = 'MONITORING_INPUT';
+          status.textContent = 'READY';
           status.className = 't-success';
         }
       }
