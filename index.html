@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Muneeb | Quantum AI Reactor Core</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="theme-redblack">
+
+  <!-- Cosmic Vector Flow Backdrop Canvas -->
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- High-Tech Audio Copy Toast -->
+  <div class="hud-toast" id="hudToast">
+    <i class="fas fa-wave-square"></i>
+    <span id="toastMsg">PIPE_ESTABLISHED: muneebkhurram69@gmail.com copied!</span>
+  </div>
+
+  <!-- Telemetry Header HUD Deck -->
+  <header class="hud-header">
+    <div class="hud-inner">
+      <div class="hud-system-status">
+        <span class="status-indicator online"></span>
+        <span class="hud-font font-code uppercase">REACTOR_CORE // <span id="uptime">00:00:00.000</span></span>
+      </div>
+      
+      <!-- Audio Synthesizer Control Deck -->
+      <div class="audio-deck">
+        <span class="hud-label font-code">AUDIO_SYNTH:</span>
+        <button id="audioToggleBtn" onclick="toggleAudio()" class="audio-btn font-code" title="Toggle Real-Time Ambient Synthesizer">
+          <i class="fas fa-volume-mute"></i> MUTED
+        </button>
+      </div>
+
+      <!-- Theme Selector Deck -->
+      <div class="theme-deck">
+        <span class="hud-label font-code">THEME:</span>
+        <button class="theme-btn active" onclick="switchTheme('redblack')" title="Red Black HSL Presets">RED/BLACK</button>
+      </div>
+
+      <!-- Live Telemetry Stats -->
+      <div class="hud-readings font-code hide-mobile">
+        <span>CORES: 8 // INTEL_READY</span>
+        <span>LATENCY: <span id="pingRate">12ms</span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating HUD Glass Capsule Navigation -->
+  <nav class="hud-nav">
+    <div class="nav-inner">
+      <a href="#" class="logo font-code">AM<span class="dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#dashboard" class="active"><i class="fas fa-network-wired"></i> Core</a></li>
+        <li><a href="#neural-net"><i class="fas fa-brain"></i> Neural Net</a></li>
+        <li><a href="#projects-deck"><i class="fas fa-layer-group"></i> Project 3D</a></li>
+        <li><a href="#companion"><i class="fas fa-robot"></i> Companion</a></li>
+        <li><a href="#connect"><i class="fas fa-satellite-dish"></i> Connect</a></li>
+      </ul>
+      <a href="javascript:void(0)" onclick="copyEmail(this)" class="nav-cta magnetic-node font-code"><i class="fas fa-atom"></i> INITIATE</a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Quantum Reactor Layout -->
+  <main class="hud-container">
+
+    <!-- ===== SECTION 1: DASHBOARD CORE ===== -->
+    <section id="dashboard" class="hud-section active-section">
+      <div class="reactor-main-grid">
+        
+        <!-- Hero Details Panel -->
+        <div class="hud-panel hero-panel-reactor">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; STACK_OPERATOR_BIO_DATA</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body">
+            <div class="hero-content">
+              <div class="hero-visual">
+                <div class="avatar-quantum-ring">
+                  <div class="avatar-inner">
+                    <img src="https://i.imgur.com/B7xT9xN.jpeg" alt="Abdul Muneeb" class="avatar-img" />
+                  </div>
+                  <svg class="orbit-path" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="46" class="dash-circle"></circle>
+                  </svg>
+                  <div class="quantum-particle q1"></div>
+                  <div class="quantum-particle q2"></div>
+                </div>
+              </div>
+              
+              <div class="hero-details">
+                <p class="hud-label font-code uppercase">STATUS: Data Science Undergrad // Major: AI</p>
+                <h1 class="hud-title font-title">Abdul Muneeb</h1>
+                <div class="typewriter-reactor font-code">
+                  <span>I BUILD </span><span class="typing" id="typing"></span><span class="blink-cursor">_</span>
+                </div>
+                <p class="hero-desc">Data Science & AI enthusiast exploring machine learning, big data pipelines, and intelligent systems. Passionate about turning raw data into actionable insights.</p>
+                <div class="hero-actions">
+                  <a href="#neural-net" class="hud-btn primary font-code"><i class="fas fa-brain"></i> INITIATE NEURAL WORKSPACE</a>
+                  <a href="#projects-deck" class="hud-btn secondary font-code"><i class="fas fa-cubes"></i> EXPLORE PIPELINES</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telemetry Stats Reactor Dials -->
+        <div class="hud-panel dials-panel">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; ACTIVE_LOG_COUNTERS</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body flex-center-col">
+            <div class="reactor-dial-container">
+              <svg class="reactor-dial" viewBox="0 0 120 120">
+                <circle class="dial-bg" cx="60" cy="60" r="48"></circle>
+                <circle class="dial-fill" id="reactorGauge" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="dial-value font-code">
+                <span class="count" id="countVal" data-target="3">0</span>
+                <span class="lbl uppercase">PROJECTS</span>
+              </div>
+            </div>
+            <div class="reactor-metrics font-code">
+              <p><span class="label-success">READY</span> C/C++ Systems: active</p>
+              <p><span class="label-success">READY</span> Python Data Pipelines: active</p>
+              <p><span class="label-success">READY</span> Java Applications: active</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Core Logs -->
+        <div class="hud-panel system-logs-panel">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; SYS_CORE_READINGS</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body font-code">
+            <div class="core-sys-log">
+              <p><span class="log-lbl">LANGUAGES:</span> C, C++, Java, Python, SQL, JavaScript</p>
+              <p><span class="log-lbl">DATA & AI:</span> Pandas, NumPy, Scikit-Learn, Kafka, Spark</p>
+              <p><span class="log-lbl">TOOLS:</span> Git, Docker, Jupyter, VS Code, Linux</p>
+              <p><span class="log-lbl">FOCUS:</span> Data Science, Big Data, Machine Learning</p>
+            </div>
+            
+            <div class="dashboard-socials">
+              <a href="https://github.com/muneeb-x" target="_blank" class="hud-social-btn magnetic-node" title="GitHub Server Link"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/muneeb-khurram-b0074540a" target="_blank" class="hud-social-btn magnetic-node" title="LinkedIn Handshake"><i class="fab fa-linkedin-in"></i></a>
+              <a href="javascript:void(0)" onclick="copyEmail(this)" class="hud-social-btn magnetic-node" title="Direct Pipeline Mail"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: INTERACTIVE NEURAL NET WORKSPACE ===== -->
+    <section id="neural-net" class="hud-section">
+      <div class="neural-net-layout">
+        
+        <!-- Controls Column -->
+        <div class="hud-panel neural-controls-panel">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; MLP_NEURON_WEIGHTS_ADJUSTER</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body font-code">
+            <p class="neural-desc">Tweak the input sliders to feed training signals into the network, click Forward Pass to calculate activations, or click Train Network to run visual backpropagation epochs in real-time!</p>
+            
+            <div class="neural-config-group">
+              <label class="hud-label uppercase">INPUT FEATURE X1 (AI BIAS):</label>
+              <div class="slider-row">
+                <input type="range" class="hud-slider" id="neuronX1" min="0" max="1" step="0.1" value="0.6" oninput="updateNeuronInputs()" />
+                <span class="slider-val" id="valX1">0.6</span>
+              </div>
+            </div>
+
+            <div class="neural-config-group">
+              <label class="hud-label uppercase">INPUT FEATURE X2 (DATA FLOW):</label>
+              <div class="slider-row">
+                <input type="range" class="hud-slider" id="neuronX2" min="0" max="1" step="0.1" value="0.4" oninput="updateNeuronInputs()" />
+                <span class="slider-val" id="valX2">0.4</span>
+              </div>
+            </div>
+
+            <div class="neural-config-group">
+              <div class="neural-telemetry font-code">
+                <p>OUTPUT (ACTIVATION): <span id="neuronOutput" class="t-accent">0.000</span></p>
+                <p>TRAINING STATUS: <span id="trainingStatus" class="t-accent">AWAITING_TRIGGER</span></p>
+                <p>EPOCHS RUN: <span id="epochsCounter">0</span></p>
+              </div>
+            </div>
+
+            <div class="neural-actions-deck flex-col">
+              <button class="hud-btn primary" onclick="runForwardPass()"><i class="fas fa-arrow-right"></i> FORWARD PROPAGATION</button>
+              <button class="hud-btn secondary" onclick="trainNeuralNetwork()"><i class="fas fa-sync-alt"></i> TRAIN NETWORK (BACKPROP)</button>
+              <button class="hud-btn danger" onclick="resetNeuralNetwork()"><i class="fas fa-trash-restore"></i> RESET WEIGHTS</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Network Vis Column -->
+        <div class="hud-panel neural-canvas-panel">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; MLP_GRAPH_NETWORK_ACTIVATIONS [MATRICES]</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body canvas-body">
+            <canvas id="neuralNetCanvas"></canvas>
+                <div class="canvas-net-hint font-code">Synapses: Red (Positive Weights) // Dark Red (Negative Weights)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: 3D LIQUID CAROUSEL PROJECTS ===== -->
+    <section id="projects-deck" class="hud-section">
+      <div class="deck-title-container">
+        <p class="section-label center">Infinite Liquid Shifter</p>
+        <h2 class="section-title">3D Hologram Deck</h2>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          
+          <!-- Card 1 -->
+          <div class="hud-panel project-carousel-card active-card" onclick="selectCarouselCard(0)">
+            <div class="panel-header">
+              <span class="panel-title font-code">AM.OS_A01 // OS ASSIGNMENT</span>
+              <span class="card-glow-badge">C / SYSTEMS</span>
+            </div>
+            <div class="panel-body flex-col justify-between">
+              <div>
+                <h3 class="proj-title">OS Programming Assignment 01</h3>
+                <p class="proj-desc">First programming assignment for the Operating Systems course, implementing core OS concepts and system-level programming techniques using the C language.</p>
+              </div>
+              <div>
+                <div class="proj-tech font-code">
+                  <span>C</span><span>Systems Programming</span><span>OS Concepts</span>
+                </div>
+                <a href="https://github.com/muneeb-x/BSDSF23A036-OS-A01" target="_blank" class="hud-btn secondary btn-card font-code"><i class="fab fa-github"></i> VIEW PIPELINE</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="hud-panel project-carousel-card" onclick="selectCarouselCard(1)">
+            <div class="panel-header">
+              <span class="panel-title font-code">AM.OS_A02 // OS ASSIGNMENT</span>
+              <span class="card-glow-badge">C / SYSTEMS</span>
+            </div>
+            <div class="panel-body flex-col justify-between">
+              <div>
+                <h3 class="proj-title">OS Programming Assignment 02</h3>
+                <p class="proj-desc">Second programming assignment for the Operating Systems course, building on system fundamentals with advanced OS concepts and process management in C.</p>
+              </div>
+              <div>
+                <div class="proj-tech font-code">
+                  <span>C</span><span>Process Management</span><span>Memory</span>
+                </div>
+                <a href="https://github.com/muneeb-x/BSDSF23A036-OS-A02" target="_blank" class="hud-btn secondary btn-card font-code"><i class="fab fa-github"></i> VIEW PIPELINE</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="hud-panel project-carousel-card" onclick="selectCarouselCard(2)">
+            <div class="panel-header">
+              <span class="panel-title font-code">AM.OS_A03 // OS ASSIGNMENT</span>
+              <span class="card-glow-badge">C / SYSTEMS</span>
+            </div>
+            <div class="panel-body flex-col justify-between">
+              <div>
+                <h3 class="proj-title">OS Programming Assignment 03</h3>
+                <p class="proj-desc">Third assignment for the Operating Systems course, tackling more complex OS challenges and solidifying systems programming skills in C.</p>
+              </div>
+              <div>
+                <div class="proj-tech font-code">
+                  <span>C</span><span>File Systems</span><span>Scheduling</span>
+                </div>
+                <a href="https://github.com/muneeb-x/BSDSF23A036-OS-A03" target="_blank" class="hud-btn secondary btn-card font-code"><i class="fab fa-github"></i> VIEW PIPELINE</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Easing Controls -->
+        <div class="carousel-controls">
+          <button class="nav-control-btn btn-left" onclick="slideCarousel('left')"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-indicators" id="carouselIndicators">
+            <span class="indicator active" onclick="selectCarouselCard(0)"></span>
+            <span class="indicator" onclick="selectCarouselCard(1)"></span>
+            <span class="indicator" onclick="selectCarouselCard(2)"></span>
+          </div>
+          <button class="nav-control-btn btn-right" onclick="slideCarousel('right')"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: AI COMPANION ECHO-9 ===== -->
+    <section id="companion" class="hud-section">
+      <div class="companion-layout">
+        
+        <!-- Reacting SVG Digital Eye Column -->
+        <div class="hud-panel companion-eye-panel">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; VIRTUAL_ASSISTANT_EYE [ACTIVE]</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body flex-center-col relative">
+            <div class="digital-eye-container">
+              <svg class="digital-eye-svg" viewBox="0 0 100 100">
+                <!-- Glowing Outer Rings -->
+                <circle cx="50" cy="50" r="44" class="outer-ring"></circle>
+                <circle cx="50" cy="50" r="36" class="inner-ring"></circle>
+                <!-- Reticle Crosshairs -->
+                <path d="M 50 2 L 50 14" class="crosshair-tick"></path>
+                <path d="M 50 98 L 50 86" class="crosshair-tick"></path>
+                <path d="M 2 50 L 14 50" class="crosshair-tick"></path>
+                <path d="M 98 50 L 86 50" class="crosshair-tick"></path>
+                <!-- Central Iris & Pupil -->
+                <circle cx="50" cy="50" r="22" class="eye-iris" id="eyeIris"></circle>
+                <circle cx="50" cy="50" r="10" class="eye-pupil" id="eyePupil"></circle>
+              </svg>
+              <!-- Glowing Scanning Glitch Lines -->
+              <div class="scanner-bar"></div>
+            </div>
+            <div class="companion-status font-code text-center">
+              <p>DESIGNATION: <span class="t-accent">ECHO-9</span></p>
+              <p>STATE: <span id="eyeStatus" class="t-success">MONITORING_INPUT</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conversational Log Column -->
+        <div class="hud-panel companion-chat-panel">
+          <div class="panel-header">
+            <span class="panel-title font-code"><i class="fas fa-comments"></i> ECHO-9_LOG_COMMUNICATION_LINK</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body flex-col justify-between">
+            <div class="chat-logs font-code" id="chatLogs">
+              <div class="chat-line incoming">
+                <span class="sender-tag">[ECHO-9]:</span>
+                <span class="sender-msg">Greetings, operator. Direct AI telemetry systems fully synchronized. Choose a query node chip below to extract system records.</span>
+              </div>
+            </div>
+
+            <!-- Clickable Conversational Chips -->
+            <div class="chat-actions font-code">
+              <div class="chat-chips-deck">
+                <button class="chip font-code" onclick="triggerEchoQuery('bio')">Who is Abdul Muneeb?</button>
+                <button class="chip font-code" onclick="triggerEchoQuery('skills')">What are his skills?</button>
+                <button class="chip font-code" onclick="triggerEchoQuery('os')">OS Assignments details</button>
+                <button class="chip font-code" onclick="triggerEchoQuery('focus')">Current focus area?</button>
+                <button class="chip font-code" onclick="triggerEchoQuery('sound')">Explain browser synthesizers</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: CONTACT CONNECT ===== -->
+    <section id="connect" class="hud-section">
+      <div class="connect-deck-layout">
+        
+        <div class="hud-panel contact-reactor-card">
+          <div class="panel-header">
+            <span class="panel-title font-code">&gt;&gt; INITIATING_TELEMETRY_LINKAGES</span>
+            <div class="panel-controls"><span></span><span></span><span></span></div>
+          </div>
+          <div class="panel-body font-code flex-center-col text-center">
+            <h2 class="contact-hud-title font-title uppercase">Establish Direct Pipeline</h2>
+            <p class="contact-hud-desc">Direct satellite connection feeds fully established. Select a secure link below to initiate connection queries, schedule deep dives, or audt Web3 smart contracts.</p>
+            
+            <div class="channel-hud-list">
+              <a href="javascript:void(0)" onclick="copyEmail(this)" class="channel-hud magnetic-node">
+                <i class="fas fa-satellite-dish"></i>
+                <div class="channel-details">
+                  <span class="chn-name uppercase">Telemetry Address (Email)</span>
+                  <span class="chn-val">muneebkhurram69@gmail.com</span>
+                </div>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/muneeb-khurram-b0074540a" target="_blank" class="channel-hud magnetic-node">
+                <i class="fab fa-linkedin-in"></i>
+                <div class="channel-details">
+                  <span class="chn-name uppercase">Secure Handshake (LinkedIn)</span>
+                  <span class="chn-val">Muneeb Khurram</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/muneeb-x" target="_blank" class="channel-hud magnetic-node">
+                <i class="fab fa-github"></i>
+                <div class="channel-details">
+                  <span class="chn-name uppercase">Repository Server (GitHub)</span>
+                  <span class="chn-val">muneeb-x</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="contact-handshake">
+              <button class="hud-btn primary" onclick="copyEmail(this)"><i class="fas fa-bolt"></i> DIRECT INSTANT CONNECT</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="hud-footer font-code">
+    <div class="footer-inner">
+      <p>SYS_STATUS: POWERING_REACTOR // AUDIO: <span id="audioStatusText" class="t-accent">MUTED</span></p>
+      <p>&copy; 2026 Abdul Muneeb // All Vectors Real-Time // SECURE_SHIELD_v2.5</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
