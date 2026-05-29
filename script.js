@@ -119,7 +119,7 @@ function initQuantumCanvas() {
   }
   
   function drawVectorGrid() {
-    ctx.strokeStyle = 'rgba(255, 42, 42, 0.025)';
+    ctx.strokeStyle = 'rgba(0, 255, 65, 0.025)';
     ctx.lineWidth = 0.6;
     let gap = 50;
     
@@ -632,8 +632,8 @@ function drawNeuralNet(flowProgress = null) {
     output: { x: canvas.width * 0.85, y: canvas.height * 0.5, val: netConfig.output, lbl: 'output (y)' }
   };
   
-  const green = '#ff1a1a';
-  const magenta = '#880000';
+  const green = '#00ff41';
+  const magenta = '#005a1a';
   
   // 1. Draw Synaptic Links (Synapses)
   // Input to Hidden Synapses
