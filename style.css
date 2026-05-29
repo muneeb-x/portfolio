@@ -4,17 +4,17 @@
 
 /* ===== 1. RED/BLACK COLORWAY PRESETS ===== */
 .theme-redblack {
-  --glow-primary: #ff1a1a;    /* Blood Red */
-  --glow-accent: #ff4444;     /* Bright Crimson */
+  --glow-primary: #ff2a2a;    /* Vivid Red */
+  --glow-accent: #ff5555;     /* Bright Crimson */
   --glow-danger: #ff0000;
-  --bg-deep: #080000;         /* Deep Black with Red Tint */
-  --panel-bg: rgba(10, 0, 0, 0.75);
-  --panel-border: rgba(255, 26, 26, 0.18);
-  --panel-border-hover: rgba(255, 26, 26, 0.5);
-  --text-main: #e0c8c8;
-  --text-dim: #8a5050;
-  --glow-shadow: rgba(255, 26, 26, 0.3);
-  --selection-bg: rgba(255, 26, 26, 0.25);
+  --bg-deep: #050000;         /* Deep Black with Red Tint */
+  --panel-bg: rgba(12, 0, 0, 0.65);
+  --panel-border: rgba(255, 42, 42, 0.25);
+  --panel-border-hover: rgba(255, 42, 42, 0.6);
+  --text-main: #f0d0d0;
+  --text-dim: #b06060;
+  --glow-shadow: rgba(255, 42, 42, 0.45);
+  --selection-bg: rgba(255, 42, 42, 0.35);
 }
 
 /* ===== 2. GLOBAL RESET & BASE WORK ===== */
@@ -38,6 +38,7 @@ body {
   position: relative;
   min-height: 100vh;
   transition: background-color 1s cubic-bezier(0.16, 1, 0.3, 1);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 42, 42, 0.04) 0%, transparent 70%);
 }
 
 ::selection {
@@ -70,17 +71,24 @@ body {
   border-radius: 16px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 30px rgba(255, 42, 42, 0.06);
   transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  animation: panelPulse 4s ease-in-out infinite;
+}
+
+@keyframes panelPulse {
+  0%, 100% { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 15px rgba(255, 42, 42, 0.03); }
+  50% { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 40px rgba(255, 42, 42, 0.1); }
 }
 
 .hud-panel:hover {
   border-color: var(--panel-border-hover);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(var(--glow-primary), 0.08);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 50px var(--glow-shadow);
+  animation: none;
 }
 
 .panel-header {
@@ -130,12 +138,13 @@ body {
 .uppercase { text-transform: uppercase; }
 
 .hud-title {
-  font-size: 3rem;
+  font-size: 3.2rem;
   line-height: 1.1;
   color: #fff;
   margin-bottom: 12px;
   font-weight: 800;
   letter-spacing: -1px;
+  text-shadow: 0 0 40px rgba(255, 42, 42, 0.15), 0 0 80px rgba(255, 42, 42, 0.05);
 }
 
 .hud-label {
@@ -159,12 +168,13 @@ body {
 .section-label.center { text-align: center; }
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 800;
   color: #fff;
   margin-bottom: 40px;
   text-align: center;
   letter-spacing: -0.5px;
+  text-shadow: 0 0 30px rgba(255, 42, 42, 0.1);
 }
 
 /* ===== 4. TELEMETRY HEADER HUD ===== */
@@ -174,10 +184,11 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(3, 3, 8, 0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(5, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 42, 42, 0.1);
+  box-shadow: 0 0 30px rgba(255, 42, 42, 0.05);
 }
 
 .hud-inner {
@@ -277,13 +288,13 @@ body {
   transform: translateX(-50%);
   width: 90%;
   max-width: 1000px;
-  background: rgba(5, 5, 10, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(8, 0, 0, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   z-index: 999;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 42, 42, 0.1);
   border-radius: 40px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 20px rgba(255, 42, 42, 0.05);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -436,13 +447,21 @@ body {
   display: none;
   opacity: 0;
   transform: translateY(15px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 80vh;
+  padding: 40px 0;
 }
 
 .hud-section.active-section {
   display: block;
   opacity: 1;
   transform: translateY(0);
+}
+
+.hud-section#dashboard.active-section {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
 /* ===== SECTION 1: DASHBOARD CORE ===== */
@@ -561,6 +580,7 @@ body {
 
 .typing {
   color: var(--glow-primary);
+  text-shadow: 0 0 20px var(--glow-shadow), 0 0 60px var(--glow-shadow);
 }
 
 .blink-cursor {
@@ -601,13 +621,14 @@ body {
   background: var(--glow-primary);
   border: 1px solid var(--glow-primary);
   color: #000;
+  box-shadow: 0 0 20px var(--glow-shadow);
 }
 
 .hud-btn.primary:hover {
   background: transparent;
   color: var(--glow-primary);
-  box-shadow: 0 0 20px var(--glow-shadow);
-  transform: translateY(-2px);
+  box-shadow: 0 0 40px var(--glow-shadow), 0 0 80px var(--glow-shadow);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .hud-btn.secondary {
@@ -665,7 +686,7 @@ body {
   stroke-dasharray: 301.6;
   stroke-dashoffset: 301.6;
   transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 0 4px var(--glow-primary));
+  filter: drop-shadow(0 0 8px var(--glow-primary)) drop-shadow(0 0 20px var(--glow-shadow));
 }
 
 .dial-value {
@@ -889,7 +910,7 @@ body {
 
 .project-carousel-card.active-card {
   border-color: var(--glow-primary);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 20px rgba(var(--glow-primary), 0.08);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 40px var(--glow-shadow), 0 0 80px rgba(255, 42, 42, 0.05);
 }
 
 .justify-between {
@@ -1280,10 +1301,11 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(3, 3, 8, 0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(5, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 42, 42, 0.1);
+  box-shadow: 0 0 20px rgba(255, 42, 42, 0.03);
   font-size: 0.65rem;
   color: var(--text-dim);
 }

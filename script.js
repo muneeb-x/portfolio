@@ -23,7 +23,7 @@ function initQuantumCanvas() {
   let particles = [];
   let width = canvas.width = window.innerWidth;
   let height = canvas.height = window.innerHeight;
-  let mouse = { x: null, y: null, targetX: null, targetY: null, radius: 160 };
+  let mouse = { x: null, y: null, targetX: null, targetY: null, radius: 200 };
   
   window.addEventListener('resize', () => {
     width = canvas.width = window.innerWidth;
@@ -54,9 +54,9 @@ function initQuantumCanvas() {
       this.y = y || Math.random() * height;
       this.vx = isExplosion ? (Math.random() - 0.5) * 8 : (Math.random() - 0.5) * 0.4;
       this.vy = isExplosion ? (Math.random() - 0.5) * 8 : (Math.random() - 0.5) * 0.4;
-      this.baseRadius = isExplosion ? Math.random() * 3 + 1.5 : Math.random() * 2 + 0.5;
+      this.baseRadius = isExplosion ? Math.random() * 4 + 2 : Math.random() * 3 + 0.8;
       this.radius = this.baseRadius;
-      this.alpha = isExplosion ? 1 : Math.random() * 0.5 + 0.2;
+      this.alpha = isExplosion ? 1 : Math.random() * 0.6 + 0.3;
       this.decay = isExplosion ? Math.random() * 0.02 + 0.01 : 0;
       this.color = getComputedStyle(document.body).getPropertyValue('--glow-primary').trim() || '#3bc9b0';
     }
@@ -105,23 +105,23 @@ function initQuantumCanvas() {
   }
   
   function spawnExplosion(x, y) {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 40; i++) {
       particles.push(new VectorParticle(x, y, true));
     }
   }
   
   function spawnParticles() {
     particles = [];
-    let count = Math.min(Math.floor((width * height) / 14000), 80);
+    let count = Math.min(Math.floor((width * height) / 8000), 150);
     for (let i = 0; i < count; i++) {
       particles.push(new VectorParticle());
     }
   }
   
   function drawVectorGrid() {
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.012)';
-    ctx.lineWidth = 0.5;
-    let gap = 60;
+    ctx.strokeStyle = 'rgba(255, 42, 42, 0.025)';
+    ctx.lineWidth = 0.6;
+    let gap = 50;
     
     for (let x = 0; x < width; x += gap) {
       ctx.beginPath();
