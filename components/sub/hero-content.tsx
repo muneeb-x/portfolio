@@ -90,21 +90,10 @@ export const HeroContent = () => {
 
       {/* ===== MOBILE LAYOUT ===== */}
       <div className="md:hidden flex flex-col items-center w-full gap-5 pt-32">
-        {/* Welcome Badge */}
-        <motion.div
-          variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] self-start"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Data Science & AI Portfolio
-          </h1>
-        </motion.div>
-
         {/* Name */}
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="w-full flex flex-col gap-2 text-3xl text-bold text-white"
+          className="w-full flex flex-col gap-2 text-3xl text-bold text-white text-center"
         >
           <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-300">
             ABDUL MUNEEB
