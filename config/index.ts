@@ -23,7 +23,8 @@ export const siteConfig: Metadata = {
     url: "https://github.com/muneeb-x",
   },
   icons: {
-    icon: "/pfp.png",
-    apple: "/apple-icon.svg",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
 } as const;
