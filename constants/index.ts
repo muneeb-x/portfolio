@@ -241,6 +241,13 @@ export const PROJECTS = [
     image: "/projects/project-1.png",
     link: "https://github.com/muneeb-x/muneeb-x",
   },
+  {
+    title: "Global Market Terminal",
+    description:
+      "A collaborative terminal-based global market analysis tool. Built with Zinx for real-time market data and insights.",
+    image: "/projects/project-2.png",
+    link: "https://github.com/Zin-7045/global-market-terminal",
+  },
 ] as const;
 
 export const FOOTER_DATA = [
