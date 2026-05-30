@@ -101,7 +101,7 @@ export const SOCIALS = [
   {
     name: "LinkedIn",
     icon: FaLinkedin,
-    link: "https://www.linkedin.com/in/muneeb-khurram-b0074540a",
+    link: "https://www.linkedin.com/in/abdul-muneeb-b0074540a",
   },
   {
     name: "Email",
@@ -262,7 +262,7 @@ export const FOOTER_DATA = [
       {
         name: "LinkedIn",
         icon: RxLinkedinLogo,
-        link: "https://www.linkedin.com/in/muneeb-khurram-b0074540a",
+        link: "https://www.linkedin.com/in/abdul-muneeb-b0074540a",
       },
       {
         name: "Email",
@@ -277,7 +277,7 @@ export const FOOTER_DATA = [
       {
         name: "Linkedin",
         icon: RxLinkedinLogo,
-        link: "https://www.linkedin.com/in/muneeb-khurram-b0074540a",
+        link: "https://www.linkedin.com/in/abdul-muneeb-b0074540a",
       },
       {
         name: "GitHub",
