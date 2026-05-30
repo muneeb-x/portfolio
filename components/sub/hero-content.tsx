@@ -89,21 +89,22 @@ export const HeroContent = () => {
       </motion.div>
 
       {/* ===== MOBILE LAYOUT ===== */}
-      <div className="md:hidden flex flex-col items-center w-full gap-5 pt-32">
-        {/* Name */}
+      <div className="md:hidden flex flex-col items-center w-full gap-4">
+        {/* Badge */}
         <motion.div
-          variants={slideInFromLeft(0.5)}
-          className="w-full flex flex-col gap-2 text-3xl text-bold text-white text-center"
+          variants={slideInFromTop}
+          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-300">
-            ABDUL MUNEEB
-          </span>
+          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+          <h1 className="Welcome-text text-[13px]">
+            Data Science & AI Portfolio
+          </h1>
         </motion.div>
 
-        {/* Avatar */}
+        {/* Avatar (bigger) */}
         <motion.div
           variants={slideInFromRight(0.8)}
-          className="w-full flex justify-center items-center relative my-2"
+          className="w-full flex justify-center items-center relative"
         >
           <Image
             src="/hero-bg.svg"
@@ -111,10 +112,10 @@ export const HeroContent = () => {
             height={650}
             width={650}
             draggable={false}
-            className="select-none max-w-[260px]"
+            className="select-none max-w-[320px]"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-[110px] h-[110px] rounded-full border-4 border-[#7042f88b] overflow-hidden shadow-[0_0_30px_#7042f88b]">
+            <div className="w-[140px] h-[140px] rounded-full border-4 border-[#7042f88b] overflow-hidden shadow-[0_0_30px_#7042f88b]">
               <Image
                 src="/pfp.png"
                 alt="ABDUL MUNEEB"
@@ -126,10 +127,20 @@ export const HeroContent = () => {
           </div>
         </motion.div>
 
+        {/* Name (under avatar) */}
+        <motion.div
+          variants={slideInFromLeft(0.5)}
+          className="w-full flex flex-col gap-2 text-3xl text-bold text-white text-center"
+        >
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-300">
+            ABDUL MUNEEB
+          </span>
+        </motion.div>
+
         {/* Exploring text */}
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="w-full text-lg font-medium text-white text-start"
+          className="w-full text-base font-medium text-white text-center"
         >
           <span>
             Exploring{" "}
@@ -143,7 +154,7 @@ export const HeroContent = () => {
         {/* About */}
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-sm text-gray-400 w-full text-start"
+          className="text-sm text-gray-400 w-full text-center"
         >
           Data Science & AI enthusiast | Web Engineering | Information Security.
           Building with Python, SQL, and intelligent systems. Check out my projects and skills.
@@ -153,7 +164,7 @@ export const HeroContent = () => {
         <motion.a
           variants={slideInFromLeft(1)}
           href="#projects"
-          className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg self-start"
+          className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg"
         >
           View Projects
         </motion.a>

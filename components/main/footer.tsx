@@ -10,7 +10,7 @@ export const Footer = () => {
           {FOOTER_DATA.map((column) => (
             <div
               key={column.title}
-              className="min-w-[200px] h-auto flex flex-col items-center justify-start"
+              className="min-w-[120px] md:min-w-[200px] h-auto flex flex-col items-center justify-start"
             >
               <h3 className="font-bold text-[16px]">{column.title}</h3>
               {column.data.map(({ icon: Icon, name, link }) => (
