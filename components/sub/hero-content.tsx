@@ -89,7 +89,7 @@ export const HeroContent = () => {
       </motion.div>
 
       {/* ===== MOBILE LAYOUT ===== */}
-      <div className="md:hidden flex flex-col items-center w-full gap-4">
+      <div className="md:hidden flex flex-col items-center w-full gap-4 pt-40">
         {/* Badge */}
         <motion.div
           variants={slideInFromTop}
