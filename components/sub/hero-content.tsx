@@ -1,0 +1,90 @@
+"use client";
+
+import { SparklesIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+import {
+  slideInFromLeft,
+  slideInFromRight,
+  slideInFromTop,
+} from "@/lib/motion";
+
+export const HeroContent = () => {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      className="flex flex-col md:flex-row items-center justify-center px-6 md:px-20 mt-20 w-full z-[20] gap-10 md:gap-0"
+    >
+      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+        <motion.div
+          variants={slideInFromTop}
+          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+        >
+          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+          <h1 className="Welcome-text text-[13px]">
+            Data Science & AI Portfolio
+          </h1>
+        </motion.div>
+
+        <motion.div
+          variants={slideInFromLeft(0.5)}
+          className="flex flex-col gap-6 mt-6 text-3xl md:text-4xl lg:text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
+        >
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-300">
+            ABDUL MUNEEB
+          </span>
+          <span>
+            Exploring{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              data-driven
+            </span>{" "}
+            solutions & intelligent systems.
+          </span>
+        </motion.div>
+
+        <motion.p
+          variants={slideInFromLeft(0.8)}
+          className="text-sm md:text-lg text-gray-400 my-5 max-w-[600px]"
+        >
+          Data Science & AI enthusiast | Web Engineering | Information Security.
+          Building with Python, SQL, and intelligent systems. Check out my projects and skills.
+        </motion.p>
+
+        <motion.a
+          variants={slideInFromLeft(1)}
+          href="#projects"
+          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+        >
+          View Projects
+        </motion.a>
+      </div>
+
+      <motion.div
+        variants={slideInFromRight(0.8)}
+        className="w-full md:w-auto h-full flex justify-center items-center relative"
+      >
+        <Image
+          src="/hero-bg.svg"
+          alt="work icons"
+          height={650}
+          width={650}
+          draggable={false}
+          className="select-none max-w-[280px] md:max-w-full"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-[120px] h-[120px] md:w-[200px] md:h-[200px] rounded-full border-4 border-[#7042f88b] overflow-hidden shadow-[0_0_30px_#7042f88b]">
+            <Image
+              src="/pfp.png"
+              alt="ABDUL MUNEEB"
+              width={200}
+              height={200}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
