@@ -39,4 +39,4 @@ npm run build
 ## Links
 
 - GitHub: [muneeb-x](https://github.com/muneeb-x)
-- LinkedIn: [Muneeb Khurram](https://www.linkedin.com/in/muneeb-khurram-b0074540)
+- LinkedIn: [Muneeb Khurram](https://www.linkedin.com/in/muneeb-khurram-b0074540a)
