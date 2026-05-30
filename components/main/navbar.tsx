@@ -10,14 +10,22 @@ export const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-4 md:px-10 rounded-b-2xl">
       {/* Navbar Container */}
-      <div className="w-full h-full grid grid-cols-3 items-center m-auto px-[10px]">
-        {/* Logo + Name */}
-        <Link href="#about-me" className="flex items-center justify-self-start">
-          <div className="text-2xl font-black">
-            <span className="text-white">AM</span>
-            <span className="text-purple-500">.</span>
-          </div>
-        </Link>
+      <div className="w-full h-full flex md:grid md:grid-cols-3 items-center m-auto px-[10px]">
+        {/* Hamburger + Logo (mobile left) */}
+        <div className="flex items-center gap-2">
+          <button
+            className="md:hidden text-white focus:outline-none text-3xl"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            ☰
+          </button>
+          <Link href="#about-me" className="flex items-center justify-self-start">
+            <div className="text-2xl font-black">
+              <span className="text-white">AM</span>
+              <span className="text-purple-500">.</span>
+            </div>
+          </Link>
+        </div>
 
         {/* Web Navbar */}
         <div className="hidden md:flex justify-center">
@@ -47,14 +55,6 @@ export const Navbar = () => {
             </Link>
           ))}
         </div>
-
-        {/* Hamburger Menu */}
-        <button
-          className="md:hidden text-white focus:outline-none text-3xl justify-self-end"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          ☰
-        </button>
       </div>
 
       {/* Mobile Menu */}
